@@ -11,31 +11,11 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    padding-top: 2rem;
+    padding-top: 3.5rem;
     padding-bottom: 3rem;
     gap: 1rem;
     min-height: 100vh;
     overflow-x: hidden;
-}
-
-.top-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0.25rem;
-    z-index: 10;
-}
-
-.top-logo-zt {
-    width: 68px;
-    height: 68px;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 16px rgba(239, 27, 24, 0.45));
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.top-logo-zt:hover {
-    transform: scale(1.1) rotate(5deg);
 }
 
 .bg-text-animation {
@@ -70,42 +50,61 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.name-pill-badge {
+/* ==================== KARL TASKS PILL TAB (SCREENSHOT EXACT) ==================== */
+.karl-tab-pill {
     position: relative;
     z-index: 1;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #141728;
-    padding: 6px 18px 6px 10px;
-    border-radius: 999px;
-    border: 1.5px solid transparent;
-    background-image: linear-gradient(#141728, #141728), linear-gradient(135deg, #A855F7, #EC4899, #F97316);
+    background: #16151B;
+    padding: 6px 14px 6px 10px;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background-image: linear-gradient(#16151B, #16151B), linear-gradient(135deg, #A899C7, #F09B7D);
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(168, 85, 247, 0.25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     margin-top: 0.25rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+    user-select: none;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
 }
 
-.name-pill-badge:hover {
-    transform: scale(1.04);
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+.karl-tab-pill:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65);
 }
 
-.pill-zt-icon {
-    width: 26px;
-    height: 26px;
+.karl-tab-icon {
+    width: 20px;
+    height: 20px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 6px rgba(239, 27, 24, 0.5));
+    flex-shrink: 0;
 }
 
-.pill-name-text {
-    font-size: clamp(1rem, 3.8vw, 1.25rem);
-    font-weight: 800;
+.karl-tab-text {
+    font-size: 0.92rem;
+    font-weight: 500;
     color: #FFFFFF;
-    letter-spacing: 0.02em;
-    font-family: 'Outfit', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.karl-tab-close {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.15rem;
+    line-height: 1;
+    margin-left: 2px;
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.karl-tab-close:hover {
+    color: #FFFFFF;
+    transform: scale(1.15);
 }
 
 h1 {
