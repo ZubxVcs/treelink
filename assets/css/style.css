@@ -20,13 +20,13 @@ body {
 
 .bg-text-animation {
     position: fixed;
-    top: 5rem;
+    top: 6rem;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(3rem, 18vw, 12rem);
+    font-size: clamp(6.5rem, 28vw, 18rem);
     text-transform: uppercase;
     font-weight: 900;
-    -webkit-text-stroke: 2px #2d2d56;
+    -webkit-text-stroke: 2px rgba(45, 45, 86, 0.85);
     -webkit-text-fill-color: transparent;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     z-index: 0;
@@ -36,7 +36,8 @@ body {
     width: 100%;
     text-align: center;
     will-change: transform;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.04em;
+    opacity: 0.65;
 }
  
 .my-foto {
@@ -327,9 +328,9 @@ ul.sosmed li {
     }
 
     .bg-text-animation {
-        top: 2.5rem;
-        font-size: 5rem;
-        opacity: 0.6;
+        top: 4rem;
+        font-size: clamp(6rem, 24vw, 9rem);
+        opacity: 0.55;
     }
 
     h1 {
@@ -349,10 +350,10 @@ ul.sosmed li {
     }
 
     .bg-text-animation {
-        top: 1.5rem;
-        font-size: 3.5rem;
-        opacity: 0.4;
-        letter-spacing: -0.03em;
+        top: 3.5rem;
+        font-size: clamp(5.5rem, 26vw, 7.5rem);
+        opacity: 0.5;
+        letter-spacing: 0.02em;
     }
 
     .my-foto {

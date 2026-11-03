@@ -16,7 +16,7 @@ actionLink.forEach((action) => {
         const toastElement = document.getElementById("toast");
         toastElement.innerHTML = `
             <div class="toast-container">
-                <p>✅ Link berhasil disalin!</p>
+                <p> <i class="ph-fill ph-check-square"></i> Link berhasil disalin!</p>
             </div>
         `;
 
@@ -74,9 +74,9 @@ let lastScrollY = 0;
 function updateAnimation() {
     const bgText = document.querySelector(".bg-text-animation");
     if (bgText) {
-        // Smooth animation dengan clamp untuk mencegah excessive movement
-        const scrollAmount = Math.min(lastScrollY, window.innerHeight);
-        bgText.style.transform = `translateX(-50%) translateX(${scrollAmount * 0.3}px)`;
+        // Efek parallax halus: meluncur perlahan ke samping saat scroll
+        const scrollAmount = lastScrollY * 0.15;
+        bgText.style.transform = `translateX(-50%) translateX(${scrollAmount}px)`;
     }
     ticking = false;
 }
