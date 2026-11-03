@@ -3,11 +3,20 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.middleware.gzip import GZipMiddleware
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 app = FastAPI(title="Karl Linktree (treelink)")
 app.add_middleware(GZipMiddleware, minimum_size=500)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+@app.exception_handler(StarletteHTTPException)
+async def custom_http_exception_handler(request: Request, exc: StarletteHTTPException):
+    if exc.status_code == 404:
+        not_found_path = os.path.join(BASE_DIR, "404.html")
+        if os.path.exists(not_found_path):
+            return FileResponse(not_found_path, status_code=404, media_type="text/html")
+    return HTMLResponse(content=f"<h1>Error {exc.status_code}</h1><p>{exc.detail}</p>", status_code=exc.status_code)
 
 @app.middleware("http")
 async def add_cache_headers(request: Request, call_next):
