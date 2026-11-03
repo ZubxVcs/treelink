@@ -70,6 +70,44 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+.name-pill-badge {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #141728;
+    padding: 6px 18px 6px 10px;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+    background-image: linear-gradient(#141728, #141728), linear-gradient(135deg, #A855F7, #EC4899, #F97316);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(168, 85, 247, 0.25);
+    margin-top: 0.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.name-pill-badge:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+}
+
+.pill-zt-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(239, 27, 24, 0.5));
+}
+
+.pill-name-text {
+    font-size: clamp(1rem, 3.8vw, 1.25rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    font-family: 'Outfit', sans-serif;
+}
+
 h1 {
     position: relative;
     z-index: 1;
